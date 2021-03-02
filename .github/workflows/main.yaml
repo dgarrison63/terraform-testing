@@ -72,4 +72,4 @@ jobs:
 
       - name: output github context
         run: |
-          echo "Github steps context ${{ toJSON(steps) }}"
+          echo ${{ toJSON(steps) }}
