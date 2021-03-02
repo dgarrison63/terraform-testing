@@ -32,6 +32,7 @@ jobs:
         run: echo "This is the outcome of init ${{ steps.init.outcome }}"
 
       - name: terraform plan
+        id: plan
         run: |
           cd ./terraform
           terraform plan 
@@ -53,7 +54,9 @@ jobs:
           cd ./terraform
           echo ::set-output name=tf_output::$(terraform output -raw teststring)
           echo $(terraform output teststring)
-          echo "Terraform outcomes ${{ steps.id.outcomes }}"
+          echo "Terraform init outcome ${{ steps.init.outcome }}"
+          echo "Terraform plan outcome ${{ steps.plan.outcome }}"
+          echo "Terraform apply outcome ${{ steps.apply.outcome }}"
 
       - name: echo outputs
         run: echo "this is the terraform output ${{ steps.tf.outputs.tf_output }}"
