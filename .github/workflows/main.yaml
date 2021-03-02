@@ -51,7 +51,7 @@ jobs:
           echo $(terraform output teststring)
 
       - name: echo outputs
-        run: echo "this is the terraform output ${{ steps.tf.outputs.tf_output }}
+        run: echo "this is the terraform output ${{ steps.tf.outputs.tf_output }}"
 
       - name: Get outputs
         uses: dflook/terraform-output@v1
