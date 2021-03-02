@@ -40,7 +40,8 @@ jobs:
 
       - name: display terraform outputs
         run: |
-          echo "This is the Terraform output ${{ steps.apply.outputs.teststring }}"
+          cd ./terraform
+          echo "This is the Terraform output $(terraform output teststring)"
 
       - name: Call terraform output
         id: tf
