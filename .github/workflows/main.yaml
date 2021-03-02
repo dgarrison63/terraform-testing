@@ -44,5 +44,6 @@ jobs:
 
       - name: Call terraform output
         run: |
+          cd ./terraform
           output=$(terraform output teststring)
           echo $output
