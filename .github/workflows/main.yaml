@@ -13,9 +13,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: initialize terraform en
-        uses: hashicorp/setup-terrafo
+      
+      - name: initialize terraform environment
+        uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: ~0.14.3
 
