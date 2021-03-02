@@ -49,4 +49,4 @@ jobs:
           echo ::set-output name=tf_output::$(terraform output teststring)
 
       - name: echo outputs
-        run: echo "this is the terraform output {{ steps.outputs.outputs.tf_output }}"
+        run: echo "this is the terraform output ${{ steps.outputs.outputs.tf_output }}"
