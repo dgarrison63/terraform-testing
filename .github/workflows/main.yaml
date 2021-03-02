@@ -51,4 +51,13 @@ jobs:
           echo $(terraform output teststring)
 
       - name: echo outputs
-        run: echo "this is the terraform output ${{ steps.tf.outputs.tf_output }}"
+        run: echo "this is the terraform output ${{ steps.tf.outputs.tf_output }}
+
+      - name: Get outputs
+        uses: dflook/terraform-output@v1
+        id: tf-outputs
+        with:
+          path: ./terraform
+
+      - name: Print the hostname
+        run: echo "The terraform random string was ${{ steps.tf-outputs.outputs.teststring }}"
