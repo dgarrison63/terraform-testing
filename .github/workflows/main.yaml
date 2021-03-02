@@ -70,9 +70,9 @@ jobs:
       - name: Print the random string
         run: echo "The terraform random string was ${{ steps.tf-outputs.outputs.teststring }}"
 
-      - name: output github context
-        run: |
-          echo "${{ toJSON(steps) }}"
+      # - name: output github context
+      #   run: |
+      #     echo "${{ toJSON(steps) }}"
 
       - name: Dump steps context
         env:
