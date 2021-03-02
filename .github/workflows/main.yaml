@@ -53,7 +53,7 @@ jobs:
           cd ./terraform
           echo ::set-output name=tf_output::$(terraform output -raw teststring)
           echo $(terraform output teststring)
-          echo "Terraform outcomes ${{ "
+          echo "Terraform outcomes ${{ steps.id.outcomes }}"
 
       - name: echo outputs
         run: echo "this is the terraform output ${{ steps.tf.outputs.tf_output }}"
