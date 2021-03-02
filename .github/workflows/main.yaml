@@ -33,6 +33,11 @@ jobs:
           terraform plan 
 
       - name: terraform apply
+        id: apply
         run: |
           cd ./terraform
           terraform apply --auto-approve
+
+      - name: display terraform outputs
+        run: |
+          echo "This is the Terraform output ${{ steps.apply.outputs.teststring }}"
