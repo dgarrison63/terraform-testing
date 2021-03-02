@@ -73,3 +73,8 @@ jobs:
       - name: output github context
         run: |
           echo "${{ toJSON(steps) }}"
+
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJSON(steps) }}
+        run: echo "$STEPS_CONTEXT"
